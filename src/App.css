@@ -1,0 +1,15 @@
+.character {
+  display: flex;
+}
+
+/* .left {
+  order: 1;
+} */
+
+img {
+  width: 200px;
+}
+
+.liked {
+  background-color: cadetblue;
+}
