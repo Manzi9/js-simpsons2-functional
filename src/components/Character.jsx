@@ -1,43 +1,17 @@
-import React, { Component } from "react";
 import Name from "./Name";
-import Quote from "./Quote";
-import Image from "./Image";
+import Name from "./Image";
+import Name from "./Toggle";
+import Name from "./Quote";
 
-class Character extends Component {
-  state = { liked: false };
-
-  onLikeToggle = () => {
-    this.setState({ liked: !this.state.liked });
-  };
-
-  render() {
-    const { name, quote, image, characterDirection } = this.props;
-    const { liked } = this.state;
-
-    if (characterDirection === "Left") {
-      return (
-        <div
-          onClick={() => this.onLikeToggle("Hello")}
-          className={liked ? "character liked" : "character notLiked"}
-        >
-          <Name name={name} />
-          <Image imageUrl={image} imageAlt={name} />
-          <Quote quote={quote} />
-        </div>
-      );
-    }
-
-    return (
-      <div
-        className={liked ? "character liked" : "character notLiked"}
-        onClick={this.onLikeToggle}
-      >
-        <Name name={name} />
-        <Quote quote={quote} />
-        <Image imageUrl={image} imageAlt={name} />
-      </div>
-    );
-  }
+function Character({ character }, toggleLiked) {
+  return (
+    <>
+      <Name name={character.name} />
+      <Image image={character.image} />
+      <Quote quote={character.quote} />
+      <Toggle toggleLiked={toggleLiked} id={character.id} />
+    </>
+  );
 }
 
 export default Character;

@@ -1,9 +1,6 @@
-import React, { Component } from "react";
-
-class Image extends Component {
-  render() {
-    return <img src={this.props.imageUrl} alt={this.props.imageAlt} />;
-  }
+function Image({ imageURL }) {
+  //TODOcheck how API words it.
+  return <img src={imageURL} />;
 }
 
 export default Image;
