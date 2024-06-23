@@ -11,5 +11,21 @@ img {
 }
 
 .liked {
-  background-color: cadetblue;
+  background-color: lightgreen;
+}
+
+.not-liked {
+  background-color: lightcoral;
+}
+
+.btn {
+  background-color: #46a180; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
 }
