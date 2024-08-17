@@ -6,6 +6,8 @@ import Image from "./Image";
 class Character extends Component {
   state = { liked: false };
   //test
+  //test
+  //test
   onLikeToggle = () => {
     this.setState({ liked: !this.state.liked });
   };
