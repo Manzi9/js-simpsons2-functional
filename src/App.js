@@ -21,6 +21,10 @@ class App extends Component {
     this.setState({ simpsons: data });
   };
 
+  onLiked = {} => {
+    this.setState({totalLiked: this.state.totalLiked + 1});
+  }
+
   render() {
     const { simpsons, totalLiked } = this.state;
 
