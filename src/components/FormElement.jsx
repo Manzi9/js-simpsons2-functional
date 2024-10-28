@@ -22,7 +22,7 @@ function FormElement({ callback, type, id, options }) {
       );
 
     default:
-      console.log("This should NEVER happen!");
+      console.log("Something very very wrong!");
       break;
   }
 }
