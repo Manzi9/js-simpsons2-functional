@@ -4,7 +4,7 @@ import "./App.css";
 import Characters from "./components/Characters";
 
 class App extends Component {
-  state = {};
+  state = { totalLiked: 0 };
 
   componentDidMount() {
     this.getSimpsons();
