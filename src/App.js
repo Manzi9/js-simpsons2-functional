@@ -25,6 +25,21 @@ class App extends Component {
     this.setState({ totalLiked: this.state.totalLiked + 1 });
   };
 
+  onLikeToggle = (id) => {
+    const simpsons = [...this.state.simpsons];
+
+    const indexOf = simpsons.findIndex((item) => {
+      return item.id === id;
+    });
+    if (indexOf === -1) {
+      console.log("Index shouldn't be negative!!");
+      return;
+    }
+
+    simpsons[indexOf].liked = !simpsons[indexOf].liked;
+    this.setState({ simpsons });
+  };
+
   render() {
     const { simpsons, totalLiked } = this.state;
 
@@ -35,7 +50,7 @@ class App extends Component {
     return (
       <>
         <h1>Total liked: {totalLiked}</h1>
-        <Characters characters={simpsons} onLiked={this.onLiked} />
+        <Characters characters={simpsons} onLikeToggle={this.onLikeToggle} />
       </>
     );
   }

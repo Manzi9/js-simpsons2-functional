@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Name from "./Name";
 import Quote from "./Quote";
 import Image from "./Image";
-import Controls from "./CharacterControls";
+import CharacterControls from "./CharacterControls";
 
 // function Character({
 //   name,
@@ -53,22 +53,14 @@ import Controls from "./CharacterControls";
 // }
 
 class Character extends Component {
-  state = { liked: false };
-
-  onLikeToggle = () => {
-    this.setState({ liked: !this.state.liked });
-  };
-
   render() {
-    const { name, quote, image, characterDirection } = this.props;
-    const { liked } = this.state;
+    const { name, quote, image, characterDirection, id, liked, onLikeToggle } =
+      this.props;
 
     if (characterDirection === "Left") {
       return (
-        <div
-          className={liked ? "character liked" : "character notLiked"}
-          onClick={() => this.onLikeToggle("Hello")}
-        >
+        <div>
+          <CharacterControls id={id} like={liked} onLikeToggle={onLikeToggle} />
           <Name name={name} />
           <Image imageUrl={image} imageAlt={name} />
           <Quote quote={quote} />
@@ -77,10 +69,8 @@ class Character extends Component {
     }
 
     return (
-      <div
-        className={liked ? "character liked" : "character notLiked"}
-        onClick={this.onLikeToggle}
-      >
+      <div>
+        <CharacterControls id={id} like={liked} onLikeToggle={onLikeToggle} />
         <Name name={name} />
         <Quote quote={quote} />
         <Image imageUrl={image} imageAlt={name} />

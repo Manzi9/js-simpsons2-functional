@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import Character from "./Character";
 
+//prop drilling hell
 class Characters extends Component {
   render() {
     return (
-      <div className="characters" onClick={this.props.onLiked}>
+      <div className="characters">
         {this.props.characters.map((character, index) => {
           const {
             character: name,
             quote,
             image,
+            liked,
             id,
             characterDirection,
           } = character;
@@ -21,7 +23,9 @@ class Characters extends Component {
               name={name}
               quote={quote}
               image={image}
+              liked={liked}
               characterDirection={characterDirection}
+              onLikeToggle={this.props.onLikeToggle}
             />
           );
         })}

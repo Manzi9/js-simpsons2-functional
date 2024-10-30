@@ -1,30 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 
-function FormElement({ callback, type, id, options }) {
-  switch (type) {
-    case "text":
-      return <input type="text" onInput={callback} id={id} />;
-
-    case "number":
-      return <input type="number" onInput={callback} id={id} />;
-
-    case "select":
-      return (
-        <select id={id} onChange={callback}>
-          {options.map((option) => {
-            return (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            );
-          })}
-        </select>
-      );
-
-    default:
-      console.log("ERROR!");
-      break;
+class CharacterControls extends Component {
+  state = {};
+  render() {
+    console.log(this.props);
+    const { liked, id, onLikeToggle } = this.props;
+    return (
+      <button
+        onClick={() => onLikeToggle(id)}
+        className={liked ? "character liked" : "character notLiked"}
+      >
+        Like
+      </button>
+    );
   }
 }
 
-export default FormElement;
+export default CharacterControls;
