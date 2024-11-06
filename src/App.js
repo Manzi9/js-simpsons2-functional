@@ -32,7 +32,7 @@ class App extends Component {
       return item.id === id;
     });
     if (indexOf === -1) {
-      console.log("Index shouldn't be negative!!");
+      console.log("Index shouldn't be negative!");
       return;
     }
 
