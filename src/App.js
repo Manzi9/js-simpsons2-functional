@@ -18,6 +18,8 @@ class App extends Component {
     data.forEach((element, index) => {
       element.id = index + 1;
     });
+
+    //renaming incoming api info
     this.setState({ simpsons: data });
   };
 
