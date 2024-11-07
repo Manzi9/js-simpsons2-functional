@@ -14,7 +14,7 @@ class App extends Component {
     const { data } = await axios.get(
       `https://thesimpsonsquoteapi.glitch.me/quotes?count=50`
     );
-    //fixes api data
+    //fixes api data IDs to char
     data.forEach((element, index) => {
       element.id = index + 1;
     });
