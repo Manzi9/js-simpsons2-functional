@@ -10,7 +10,7 @@ class CharacterControls extends Component {
         onClick={() => onLikeToggle(id)}
         className={liked ? "character liked" : "character notLiked"}
       >
-        Like
+        {liked ? "Unlike" : "Like"}
       </button>
     );
   }
