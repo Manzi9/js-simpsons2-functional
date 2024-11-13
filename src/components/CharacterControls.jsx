@@ -1,19 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CharacterControls extends Component {
-  state = {};
-  render() {
-    console.log(this.props);
-    const { liked, id, onLikeToggle } = this.props;
-    return (
-      <button
-        onClick={() => onLikeToggle(id)}
-        className={liked ? "character liked" : "character notLiked"}
-      >
-        {liked ? "Unlike" : "Like"}
-      </button>
-    );
-  }
-}
+const CharacterControls = ({ liked, id, onLikeToggle }) => {
+  console.log({ liked, id, onLikeToggle });
+
+  return (
+    <button
+      onClick={() => onLikeToggle(id)}
+      className={liked ? "character liked" : "character notLiked"}
+    >
+      {liked ? "Unlike" : "Like"}
+    </button>
+  );
+};
 
 export default CharacterControls;
