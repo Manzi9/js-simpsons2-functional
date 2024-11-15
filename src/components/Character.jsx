@@ -17,10 +17,7 @@ function Character({
   if (characterDirection === "Left") {
     return (
       //ID makes styling easier
-      <div
-        onClick={onLikeToggle}
-        class={liked ? "character liked" : "character notLiked"}
-      >
+      <div class={liked ? "character liked" : "character notLiked"}>
         <Name name={name} />
         <Image imageUrl={image} imageAlt={name} />
         <Quote quote={quote} />
@@ -35,10 +32,7 @@ function Character({
   }
 
   return (
-    <div
-      onClick={onLikeToggle}
-      class={liked ? "character liked" : "character notLiked"}
-    >
+    <div class={liked ? "character liked" : "character notLiked"}>
       <Name name={name} />
       <Quote quote={quote} />
       <Image imageUrl={image} imageAlt={name} />
@@ -51,32 +45,5 @@ function Character({
     </div>
   );
 }
-
-// class Character extends Component {
-//   render() {
-//     const { name, quote, image, characterDirection, id, liked, onLikeToggle } =
-//       this.props;
-
-//     if (characterDirection === "Left") {
-//       return (
-//         <div>
-//           <CharacterControls id={id} like={liked} onLikeToggle={onLikeToggle} />
-//           <Name name={name} />
-//           <Image imageUrl={image} imageAlt={name} />
-//           <Quote quote={quote} />
-//         </div>
-//       );
-//     }
-
-//     return (
-//       <div>
-//         <CharacterControls id={id} like={liked} onLikeToggle={onLikeToggle} />
-//         <Name name={name} />
-//         <Quote quote={quote} />
-//         <Image imageUrl={image} imageAlt={name} />
-//       </div>
-//     );
-//   }
-// }
 
 export default Character;
